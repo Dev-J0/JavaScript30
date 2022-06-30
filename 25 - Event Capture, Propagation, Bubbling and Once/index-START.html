@@ -14,6 +14,7 @@
   </div>
 
 <style>
+  
   html {
     box-sizing: border-box;
   }
@@ -39,10 +40,29 @@
     background: coral;
   }
 </style>
-
+<!-- bubbling is when the browser realises what you clicked on but it will also trigger other clicks. when you make a click it will ripple all the way to the top. browser will do a capture (from top down) then it will bubble up, triggering the events, going up-->
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div');
 
+  function logText(e) {
+    e.stopPropagation();
+
+  }
+
+  divs.forEach(div => div.addEventListener('click'; logText, {
+    capture: false;
+    once: true;
+    /* once true will listen to a click then unbind itself, its like saying div remove event listener. it will listen to a click once and thats it. it will only run once; helps for button that is meant to be clicked only once  */
+  }));
+
+  button.addEventLitener('click', () => {
+    console.log('click');
+  }) {
+    once: true
+  }
 </script>
+<!--e.stopPropagation() in function after e will stop the bubbling because the browser starts at the lowest, runs at function, it will no longer trigger events on the parrents (wrap in if statement if there is one in the middle)  -->
 </body>
 </html>
+
