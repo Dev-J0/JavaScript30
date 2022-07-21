@@ -17,6 +17,7 @@
     
     body {
       margin: 0;
+      cursor: pointer;
     }
     
     *, *:before, *:after {
@@ -139,10 +140,8 @@ function toggleActive(e) {
 
   panels.forEach(panel => panel.addEventListener('click', toggleOpen));
   panels.forEach(panel => panel.addEventListener('transitioned', toggleActive));
-  
+
   </script>
-
-
 
 </body>
 </html>
